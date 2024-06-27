@@ -1,0 +1,45 @@
+<html>
+    <head>
+    <title>Teja</title>
+    <style>
+        body {
+            background: linear-gradient(to right, #007bff, #00c6ff);
+            background-repeat: no-repeat;
+            background-size: cover;
+            background-attachment: fixed;
+            align-items: center;
+            justify-content: center;
+            font-family: 'Segoe UI';
+            display: flex;
+        }
+        
+    </style>
+    </head>
+    <body>
+        <center>
+        <div class="container">
+            <h1>WATER QUALITY</h1>
+            <form action="/predict" method="POST">
+                <input type="text" name="ph" placeholder="ph" style="height: 30px; width: 300px;"><br>
+                <input type="text" name="Hardness" placeholder="Hardness" style="height: 30px; width: 300px;"><br>
+                <input type="text" name="Solids" placeholder="Solids" style="height: 30px; width: 300px;"><br>
+                <input type="text" name="Chloramines" placeholder="Chloramines" style="height: 30px; width: 300px;"><br>
+                <input type="text" name="Sulfate" placeholder="Sulfate" style="height: 30px; width: 300px;"><br>
+                <input type="text" name="Conductivity" placeholder="Conductivity" style="height: 30px; width: 300px;"><br>
+                <input type="text" name="Organic_carbon" placeholder="Organic_carbon" style="height: 30px; width: 300px;"><br>
+                <input type="text" name="Trihalomethanes" placeholder="Trihalomethanes" style="height: 30px; width: 300px;"><br>
+                <input type="text" name="Turbidity" placeholder="Turbidity" style="height: 30px; width: 300px;"><br>
+                <button class='btn btn-success'>Predict</button>
+            </form>
+            <div class="row">
+                {% if prediction==0 %}
+                    <h1 class="text-warning" style="">Water Is Not Safe</h1>
+                {% elif prediction==1 %}
+                    <h1 class="text-warning" style="">Water Is Safe</h1>
+                {% endif %}
+            </div>
+        </div>
+        </center>
+    </body>
+</html>
+
